@@ -1,34 +1,11 @@
 <?php
 
-session_start();
-if(isset($_SESSION['username'])){
-    header("Location: /");
-    exit();
-
-}
+include 'includes/logincheck.php';
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-<body>
-    <?php include 'navbar.php';?>
-    
-   <?php
-  // mysql -> <select -> where -> username = $_SESSION['username'];
-  //$_SESSION['username']
-
-  session_start();
-  print_r($_POST);
-  
-  // echo password_hash('addad',PASSWORD_DEFAULT);
-  // die();
-  
+    <?php include 'navbar.php';?>  
+    <?php
+ 
   
   $servername = "localhost";
   $dbusername = "root";
@@ -93,5 +70,5 @@ if(isset($_SESSION['username'])){
 
    <!-- <form name="name" value="<?php echo $row['name']; ?>">
    </form> -->
-</body>
-</html>
+
+<?php include 'includes/footer.php'; ?>

@@ -1,6 +1,5 @@
-<?
-session_start();
-print_r($_POST);
+<?php
+
 
 // echo password_hash('addad',PASSWORD_DEFAULT);
 // die();
